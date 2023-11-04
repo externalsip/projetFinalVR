@@ -2235,8 +2235,30 @@
                 },
                 {
                     "name": "",
+                    "id": "c181b5fd-211f-4373-9509-c7f82772681d",
+                    "path": "<OculusTouchController>{RightHand}/devicePose/velocity",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightVelocity",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "b47212ea-d919-4c3e-87df-7fe0bf7a28c5",
                     "path": "<XRController>{LeftHand}/deviceVelocity",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftVelocity",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fbbf4cf9-c264-4965-ab0b-6bdbff9113e3",
+                    "path": "<OculusTouchController>{LeftHand}/devicePose/velocity",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
