@@ -18,6 +18,7 @@ public class fishingRodTests : XRGrabInteractable
     public GameObject hookHint;
     bool hasJoint = true;
     bool isThrown = false;
+    public float maxSpeed = 10f;
     protected override void Awake()
     {
         base.Awake();
@@ -74,7 +75,9 @@ public class fishingRodTests : XRGrabInteractable
                         var hookBody = hook.GetComponent<Rigidbody>();
                         var hookJoint = hook.GetComponent<HingeJoint>();
                         Destroy(hookJoint);
+                        Debug.Log(velocity);
                         hookBody.AddForce(velocity*50, ForceMode.Impulse);
+                        hookBody.velocity = Vector3.ClampMagnitude(velocity*50, maxSpeed);
                         hasJoint = false;
                         isThrown = true;
 
