@@ -1,0 +1,12 @@
+{
+	"fishes": [
+	{				
+	"name": "testFish",
+				"worth": 10,
+				"mesh": "fish"
+	}
+
+				]
+		}
+	}
+}
