@@ -16,8 +16,8 @@ public class fishingRodTests : XRGrabInteractable
     private Vector3 relativeDifference;
     private ControllerVelocity controllerVelocity = null;
     public GameObject hookHint;
-    bool hasJoint = true;
-    bool isThrown = false;
+    public bool hasJoint = true;
+    public bool isThrown = false;
     public float maxSpeed = 10f;
     protected override void Awake()
     {
@@ -45,6 +45,7 @@ public class fishingRodTests : XRGrabInteractable
         {
             if(updatePhase == XRInteractionUpdateOrder.UpdatePhase.Dynamic)
             {
+
                 HookThrow();
             }
         }
@@ -117,6 +118,7 @@ public class fishingRodTests : XRGrabInteractable
     // Update is called once per frame
     void Update()
     {
+
     }
 
 }

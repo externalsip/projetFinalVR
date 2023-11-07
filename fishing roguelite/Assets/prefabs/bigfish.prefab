@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &152176581979967316
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 058e1159b8152794d8db2ec15a0d3fde,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.77890176
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 058e1159b8152794d8db2ec15a0d3fde,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2529395
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 058e1159b8152794d8db2ec15a0d3fde,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2529395
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 058e1159b8152794d8db2ec15a0d3fde,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 174.63
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 058e1159b8152794d8db2ec15a0d3fde,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 058e1159b8152794d8db2ec15a0d3fde,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -583.04
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 058e1159b8152794d8db2ec15a0d3fde,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.69602907
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 058e1159b8152794d8db2ec15a0d3fde,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 058e1159b8152794d8db2ec15a0d3fde,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7180136
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 058e1159b8152794d8db2ec15a0d3fde,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 058e1159b8152794d8db2ec15a0d3fde,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 058e1159b8152794d8db2ec15a0d3fde,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -91.781
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 058e1159b8152794d8db2ec15a0d3fde,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 058e1159b8152794d8db2ec15a0d3fde,
+        type: 3}
+      propertyPath: m_Name
+      value: bigfish
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 058e1159b8152794d8db2ec15a0d3fde,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3364097044708559588}
+  m_SourcePrefab: {fileID: 100100000, guid: 058e1159b8152794d8db2ec15a0d3fde, type: 3}
+--- !u!1 &1071234501214056965 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 058e1159b8152794d8db2ec15a0d3fde,
+    type: 3}
+  m_PrefabInstance: {fileID: 152176581979967316}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3364097044708559588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071234501214056965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 195a98cd85bdf014f937c56e39c80c9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 40
+  Name: Big fish
+  Description: Il gagne.
+  Worth: 9000
+  Rarity: Rare

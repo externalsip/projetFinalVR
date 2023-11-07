@@ -14,27 +14,13 @@ public class timingGamePrototype : MonoBehaviour
     private bool IsFishOnHook = false;
     private IEnumerator FishRountine;
 
-    public TextAsset textJSON;
-    [System.Serializable]
-    public class Fish
-    {
-        public string name;
-        public int worth;
-        public string mesh;
-    }
+    public fishArray fishArray;
 
-    [System.Serializable]
-    public class FishList
-    {
-        public Fish[] fishes;
-    }
 
-    public FishList myFishList = new FishList();
 
     // Start is called before the first frame update
     void Start()
     {
-        myFishList = JsonUtility.FromJson<FishList>(textJSON.text);
         //Defines the routine used for the fish RNG and starts it (it is a test which is why the routine is started on launch)
         FishRountine = FishRng();
         StartCoroutine(FishRountine);
@@ -84,6 +70,7 @@ public class timingGamePrototype : MonoBehaviour
                 //If the player gets more than 20 points, he wins, what this entails has not been programmed yet, as I will need to figure out some stuff first.
             Debug.Log("Big Win");
                 this.GetComponent<Animator>().Play("Base Layer.Idle", 0, 0);
+
                 IsFishOnHook = false;
         }
         if(playerScore < 0)
@@ -152,7 +139,7 @@ public class timingGamePrototype : MonoBehaviour
         switch (other.tag)
         {
             case "water":
-                StopCoroutine(StartCoroutine(FishRountine));
+                StopCoroutine(FishRountine);
                 break;
         }
     }
