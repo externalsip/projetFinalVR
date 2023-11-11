@@ -11,8 +11,8 @@ public class timingGamePrototype : MonoBehaviour
     private bool GoodPress = false;
     private bool GreatPress = false;
     private bool PerfectPress = false;
-    private bool IsFishOnHook = false;
-    private IEnumerator FishRountine;
+    public bool IsFishOnHook = false;
+    public IEnumerator FishRountine;
 
     public fishArray fishArray;
 
@@ -23,7 +23,7 @@ public class timingGamePrototype : MonoBehaviour
     {
         //Defines the routine used for the fish RNG and starts it (it is a test which is why the routine is started on launch)
         FishRountine = FishRng();
-        StartCoroutine(FishRountine);
+
 
     }
 
@@ -33,8 +33,8 @@ public class timingGamePrototype : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             //For testing reasons, stopping the rountine is mapped on a button, it will not be this way in the final product.
-            StopCoroutine(FishRountine);
             Debug.Log("Pressed P");
+            StopCoroutine(FishRountine);
         }
         if (IsFishOnHook)
         {
@@ -70,8 +70,24 @@ public class timingGamePrototype : MonoBehaviour
                 //If the player gets more than 20 points, he wins, what this entails has not been programmed yet, as I will need to figure out some stuff first.
             Debug.Log("Big Win");
                 this.GetComponent<Animator>().Play("Base Layer.Idle", 0, 0);
-
+                int fishNumber = Random.Range(50, 100);
+                 if(fishNumber >= 1 && fishNumber < 50)
+                 {
+                     fishArray.PickCommonFish();
+                     Debug.Log("common");
+                 }
+                 if(fishNumber >= 50 && fishNumber < 90)
+                 {
+                     fishArray.PickUncommonFish();
+                     Debug.Log("uncommon");
+                 }
+                 if(fishNumber >= 90 && fishNumber <= 100)
+                 {
+                     fishArray.PickRareFish();
+                     Debug.Log("rare");
+                 }
                 IsFishOnHook = false;
+                
         }
         if(playerScore < 0)
         {
@@ -160,9 +176,15 @@ public class timingGamePrototype : MonoBehaviour
         }
         else
         {
+            Debug.Log("reroll");
             yield return new WaitForSeconds(2f);
-            StartCoroutine(FishRountine);
+            StartCoroutine(FishRng());
             yield return null;
         }
+    }
+
+    public void startTest()
+    {
+        StartCoroutine(FishRountine);
     }
 }

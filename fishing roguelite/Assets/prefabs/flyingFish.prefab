@@ -26,17 +26,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 52cb308e91615714cbc31205f377a6de,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 183.20792
+      value: -161.07248
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52cb308e91615714cbc31205f377a6de,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.1
+      value: -34.936314
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52cb308e91615714cbc31205f377a6de,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -469.95905
+      value: 38.84487
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 52cb308e91615714cbc31205f377a6de,
         type: 3}
@@ -86,6 +86,26 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: -1739191942545761044}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 52cb308e91615714cbc31205f377a6de,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -2621145113607627254}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 52cb308e91615714cbc31205f377a6de,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1144019060080261993}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 52cb308e91615714cbc31205f377a6de,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3267520801028443449}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 52cb308e91615714cbc31205f377a6de,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5003208659081826995}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 52cb308e91615714cbc31205f377a6de,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5135183322149100659}
   m_SourcePrefab: {fileID: 100100000, guid: 52cb308e91615714cbc31205f377a6de, type: 3}
 --- !u!1 &5029642140834425236 stripped
 GameObject:
@@ -110,3 +130,90 @@ MonoBehaviour:
   Description: "N'a pas particip\xE9 au Fish 9/11."
   Worth: 240
   Rarity: Uncommon
+--- !u!54 &-2621145113607627254
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5029642140834425236}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!138 &-1144019060080261993
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5029642140834425236}
+  m_ConnectedBody: {fileID: 0}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!138 &-3267520801028443449
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5029642140834425236}
+  m_ConnectedBody: {fileID: 0}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!138 &-5003208659081826995
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5029642140834425236}
+  m_ConnectedBody: {fileID: 0}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!138 &5135183322149100659
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5029642140834425236}
+  m_ConnectedBody: {fileID: 0}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1

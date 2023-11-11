@@ -6,6 +6,7 @@ TagManager:
   tags:
   - RodTest
   - water
+  - fish
   layers:
   - Default
   - TransparentFX

@@ -77,8 +77,7 @@ public class fishingRodTests : XRGrabInteractable
                         var hookJoint = hook.GetComponent<HingeJoint>();
                         Destroy(hookJoint);
                         Debug.Log(velocity);
-                        hookBody.AddForce(velocity*50, ForceMode.Impulse);
-                        hookBody.velocity = Vector3.ClampMagnitude(velocity*50, maxSpeed);
+                        hookBody.AddForce(velocity*5, ForceMode.Impulse);
                         hasJoint = false;
                         isThrown = true;
 
