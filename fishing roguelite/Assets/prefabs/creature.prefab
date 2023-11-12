@@ -11,27 +11,32 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1695e63c80f1e6b4c8f5533234b3f94f,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 63.103455
+      value: 27.964928
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1695e63c80f1e6b4c8f5533234b3f94f,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 63.10346
+      value: 27.964928
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1695e63c80f1e6b4c8f5533234b3f94f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 44.315998
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1695e63c80f1e6b4c8f5533234b3f94f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 174.9
+      value: -132.83633
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1695e63c80f1e6b4c8f5533234b3f94f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.100004
+      value: -27.432064
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1695e63c80f1e6b4c8f5533234b3f94f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -400.7
+      value: 139.04997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1695e63c80f1e6b4c8f5533234b3f94f,
         type: 3}
@@ -89,6 +94,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: -4426948740234878632}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1695e63c80f1e6b4c8f5533234b3f94f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7515186427104545757}
   m_SourcePrefab: {fileID: 100100000, guid: 1695e63c80f1e6b4c8f5533234b3f94f, type: 3}
 --- !u!1 &2023689114080226400 stripped
 GameObject:
@@ -288,3 +297,18 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!138 &-7515186427104545757
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023689114080226400}
+  m_ConnectedBody: {fileID: 0}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1

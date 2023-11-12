@@ -23,13 +23,18 @@ public class timingGamePrototype : MonoBehaviour
     {
         //Defines the routine used for the fish RNG and starts it (it is a test which is why the routine is started on launch)
         FishRountine = FishRng();
-
+        StartCoroutine(FishRountine);
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            StartCoroutine(FishRountine);
+        }
+
         if (Input.GetKeyDown(KeyCode.P))
         {
             //For testing reasons, stopping the rountine is mapped on a button, it will not be this way in the final product.

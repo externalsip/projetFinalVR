@@ -33,9 +33,9 @@ public class fishArray : MonoBehaviour
         int fishNumber = Random.Range(0, commonFishArr.Length - 1);
         pickedFish = commonFishArr[fishNumber];
         Instantiate(pickedFish);
-        pickedFish.transform.position = hook.transform.position;
-        pickedFish.AddComponent<FixedJoint>();
-        pickedFish.GetComponent<FixedJoint>().connectedBody = hook.GetComponent<Rigidbody>();
+        pickedFish.gameObject.transform.position = hook.transform.position;
+        pickedFish.gameObject.AddComponent<FixedJoint>();
+        pickedFish.gameObject.GetComponent<FixedJoint>().connectedBody = hook.GetComponent<Rigidbody>();
         /*
         var hookBody = hook.GetComponent<Rigidbody>();
         hookBody.velocity = Vector3.zero;
