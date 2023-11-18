@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 //THIS IS A PROTOTYPE, THIS IS WHY IT IS NOT IN VR AND USES WEIRD KEYS IT IS ONLY MEANT FOR TESTING!!!!!!!!!
 
@@ -16,7 +18,9 @@ public class timingGamePrototype : MonoBehaviour
 
     public fishArray fishArray;
 
+    public fishingRodTests fishingRodTests;
 
+    private bool firstActivation = true;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +34,22 @@ public class timingGamePrototype : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        var inputDevices = new List<UnityEngine.XR.InputDevice>();
+        switch (fishingRodTests.controllerNum)
+        {
+            case 0:
+                var desiredCharacteristicsLeft = UnityEngine.XR.InputDeviceCharacteristics.HeldInHand | UnityEngine.XR.InputDeviceCharacteristics.Left | UnityEngine.XR.InputDeviceCharacteristics.Controller;
+                UnityEngine.XR.InputDevices.GetDevicesWithCharacteristics(desiredCharacteristicsLeft, inputDevices);
+                break;
+            case 1:
+                var desiredCharacteristicsRight = UnityEngine.XR.InputDeviceCharacteristics.HeldInHand | UnityEngine.XR.InputDeviceCharacteristics.Right | UnityEngine.XR.InputDeviceCharacteristics.Controller;
+                UnityEngine.XR.InputDevices.GetDevicesWithCharacteristics(desiredCharacteristicsRight, inputDevices);
+                break;
+
+        }
+        bool primBtnValue;
+
+
         if (Input.GetKeyDown(KeyCode.O))
         {
             StartCoroutine(FishRountine);
@@ -43,33 +63,48 @@ public class timingGamePrototype : MonoBehaviour
         }
         if (IsFishOnHook)
         {
-            //While the bool IsFishOnHook is true, this code loops in the update
-            if (Input.GetKeyDown(KeyCode.S) && IsFishOnHook)
-        {
-                //Depending on when the S key is hit, you get a different score.
-            if(BadPress == true)
+            foreach (var device in inputDevices)
             {
-                Debug.Log("Bad");
-                playerScore--;
 
+                //While the bool IsFishOnHook is true, this code loops in the update
+                if (device.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primaryButton, out primBtnValue) && primBtnValue && firstActivation)
+                {
+                    Debug.Log("press");
+                    //Depending on when the S key is hit, you get a different score.
+                    if (BadPress == true)
+                    {
+                        Debug.Log("Bad");
+                        playerScore--;
+                    }
+                    if (GoodPress == true)
+                    {
+                        Debug.Log("Good");
+                        playerScore++;
+                    }
+                    if (GreatPress == true)
+                    {
+                        Debug.Log("Good");
+                        playerScore = playerScore + 2;
+                    }
+                    if (PerfectPress == true)
+                    {
+                        Debug.Log("Perfect");
+                        playerScore = playerScore + 3;
+                    }
+                    firstActivation = false;
+                    Debug.Log(firstActivation);
+                    this.GetComponent<Animator>().Play("Base Layer.cubeAnimation", 0, 0);
+                }
+                else if (device.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primaryButton, out primBtnValue) && primBtnValue == false && firstActivation == false)
+                {
+                    firstActivation = true;
+                }
             }
-            if(GoodPress == true)
-            {
-                Debug.Log("Good");
-                playerScore++;
-            }
-            if(GreatPress == true)
-            {
-                Debug.Log("Good");
-                playerScore = playerScore + 2;
-            }
-            if(PerfectPress == true)
-            {
-                Debug.Log("Perfect");
-                playerScore = playerScore + 3;
-            }
-            this.GetComponent<Animator>().Play("Base Layer.cubeAnimation", 0, 0);
-        }
+
+
+
+
+
         if(playerScore >= 20)
         {
                 //If the player gets more than 20 points, he wins, what this entails has not been programmed yet, as I will need to figure out some stuff first.
@@ -92,19 +127,22 @@ public class timingGamePrototype : MonoBehaviour
                      Debug.Log("rare");
                  }
                 IsFishOnHook = false;
-                
+                fishingRodTests.isFishing = false;
+
         }
+
+
+
+
         if(playerScore < 0)
         {
-                //If the player gets to 0 points, he loses, for now it has no repercussions, but if we end up doing the roguelite he will lose a bait.
-            Debug.Log("L");
+                //If the player gets to 0 points, he loses, for now it has no repercussions, but if we end up doing the roguelite he will lose a bait
                 this.GetComponent<Animator>().Play("Base Layer.Idle", 0, 0);
                 IsFishOnHook = false;
+                fishingRodTests.isFishing = false;
         }
-        }
-        
     }
-
+        }
     public void miss()
     {
         //If the player does not hit the button before the end of the animation, it is considered a miss.
@@ -117,6 +155,7 @@ public class timingGamePrototype : MonoBehaviour
     //The following 4 functions are linked to animation events, to determine what is the current result of the player hitting the key.
     public void switchBad()
     {
+        Debug.Log("toGood");
         BadPress = true;
         GoodPress = false;
         GreatPress = false;
@@ -124,6 +163,7 @@ public class timingGamePrototype : MonoBehaviour
     }
     public void switchGood()
     {
+        Debug.Log("toGreat");
         BadPress = false;
         GoodPress = true;
         GreatPress = false;
@@ -131,6 +171,7 @@ public class timingGamePrototype : MonoBehaviour
     }
     public void switchGreat()
     {
+        Debug.Log("toPerfect");
         BadPress = false;
         GoodPress = false;
         GreatPress = true;
@@ -138,6 +179,7 @@ public class timingGamePrototype : MonoBehaviour
     }
     public void switchPerfect()
     {
+        Debug.Log("toBad");
         BadPress = false;
         GoodPress = false;
         GreatPress = false;
@@ -174,6 +216,7 @@ public class timingGamePrototype : MonoBehaviour
         Debug.Log(FishNumber);
         if(FishNumber == 3)
         {
+            fishingRodTests.isFishing = true;
             Debug.Log("Fish!!!");
             IsFishOnHook = true;
             this.GetComponent<Animator>().Play("Base Layer.cubeAnimation", 0, 0);

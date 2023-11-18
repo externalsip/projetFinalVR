@@ -7,7 +7,7 @@ public class hookScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Physics.IgnoreLayerCollision(6, 3, true);
     }
 
     // Update is called once per frame

@@ -6,6 +6,8 @@ using static UnityEngine.Rendering.DebugUI.Table;
 public class fishArray : MonoBehaviour
 {
     public GameObject hook;
+    public GameObject hint;
+    public GameObject rod;
 
     public GameObject[] commonFishArr;
     public GameObject[] uncommonFishArr;
@@ -32,60 +34,38 @@ public class fishArray : MonoBehaviour
     {
         int fishNumber = Random.Range(0, commonFishArr.Length - 1);
         pickedFish = commonFishArr[fishNumber];
-        Instantiate(pickedFish);
-        pickedFish.gameObject.transform.position = hook.transform.position;
-        pickedFish.gameObject.AddComponent<FixedJoint>();
-        pickedFish.gameObject.GetComponent<FixedJoint>().connectedBody = hook.GetComponent<Rigidbody>();
-        /*
-        var hookBody = hook.GetComponent<Rigidbody>();
-        hookBody.velocity = Vector3.zero;
-        hookBody.angularVelocity = Vector3.zero;
-        hook.transform.position = fishingRodTests.hookHint.transform.position;
-        hook.AddComponent<HingeJoint>();
-        hook.GetComponent<HingeJoint>().connectedBody = fishingRodTests.rod.GetComponent<Rigidbody>();
-
-        fishingRodTests.hasJoint = true;
-        fishingRodTests.isThrown = false;*/
+        handleFish();
     }
     public void PickUncommonFish()
     {
         int fishNumber = Random.Range(0, uncommonFishArr.Length - 1);
         pickedFish = uncommonFishArr[fishNumber];
-        Instantiate(pickedFish);
-        Debug.Log("instantiated uncommon");
-        pickedFish.gameObject.transform.position = hook.transform.position;
-        pickedFish.gameObject.AddComponent<FixedJoint>();
-        pickedFish.gameObject.GetComponent<FixedJoint>().connectedBody = hook.GetComponent<Rigidbody>();
-/*
-        var hookBody = hook.GetComponent<Rigidbody>();
-        hookBody.velocity = Vector3.zero;
-        hookBody.angularVelocity = Vector3.zero;
-        hook.transform.position = fishingRodTests.hookHint.transform.position;
-        hook.AddComponent<HingeJoint>();
-        hook.GetComponent<HingeJoint>().connectedBody = fishingRodTests.rod.GetComponent<Rigidbody>();
-
-        fishingRodTests.hasJoint = true;
-        fishingRodTests.isThrown = false;*/
+        handleFish();
     }
     public void PickRareFish()
     {
         int fishNumber = Random.Range(0, rareFishArr.Length - 1);
-        pickedFish = commonFishArr[fishNumber];
-        Instantiate(pickedFish);
+        pickedFish = rareFishArr[fishNumber];
+        handleFish();
         Debug.Log("instantiated rare");
-        pickedFish.gameObject.transform.position = hook.transform.position;
-        pickedFish.gameObject.AddComponent<FixedJoint>();
-        pickedFish.gameObject.GetComponent<FixedJoint>().connectedBody = hook.GetComponent<Rigidbody>();
+    }   
 
-      /*  var hookBody = hook.GetComponent<Rigidbody>();
+    private void handleFish()
+    {
+        Debug.Log("triggered");
+        Instantiate(pickedFish);
+        Debug.Log(hook.transform.position);
+        pickedFish.transform.position = hook.transform.position;
+        Debug.Log(pickedFish.transform.position);
+        pickedFish.GetComponent<HingeJoint>().connectedBody = hook.GetComponent<Rigidbody>();
+       /* var hookBody = hook.GetComponent<Rigidbody>();
         hookBody.velocity = Vector3.zero;
         hookBody.angularVelocity = Vector3.zero;
         hook.transform.position = fishingRodTests.hookHint.transform.position;
         hook.AddComponent<HingeJoint>();
-        hook.GetComponent<HingeJoint>().connectedBody = fishingRodTests.rod.GetComponent<Rigidbody>();
+        hook.GetComponent<HingeJoint>().connectedBody = rod.GetComponent<Rigidbody>();
 
         fishingRodTests.hasJoint = true;
         fishingRodTests.isThrown = false;*/
-
-    }   
+    }
 }

@@ -7,14 +7,17 @@ TagManager:
   - RodTest
   - water
   - fish
+  - hookHint
+  - leftHand
+  - rightHand
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - fish
   - Water
   - UI
-  - 
+  - hook
   - 
   - 
   - 

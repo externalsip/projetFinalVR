@@ -18,7 +18,14 @@ public class fishingRodTests : XRGrabInteractable
     public GameObject hookHint;
     public bool hasJoint = true;
     public bool isThrown = false;
+    public bool isFishing = false;
     public float maxSpeed = 10f;
+
+    public bool rodHand = false;
+    public int controllerNum;
+
+    public bool rodToggle = false;
+
     protected override void Awake()
     {
         base.Awake();
@@ -29,6 +36,22 @@ public class fishingRodTests : XRGrabInteractable
     {
         base.OnSelectEntered(args);
         controllerVelocity = args.interactorObject.transform.GetComponent<ControllerVelocity>();
+
+        if(args.interactorObject is XRBaseControllerInteractor controllerInteractor && controllerInteractor != null)
+        {
+            var controller = controllerInteractor.xrController;
+            switch(controller.name)
+            {
+                case "Left Controller":
+                    controllerNum = 0;
+                    break;
+                case "Right Controller":
+                    controllerNum = 1; 
+                    break;
+            }
+
+            //Determines which hand is holding the object
+        }
     }
 
     protected override void OnSelectExited(SelectExitEventArgs args)
@@ -41,7 +64,8 @@ public class fishingRodTests : XRGrabInteractable
     {
         base.ProcessInteractable(updatePhase);
 
-        if(isSelected)
+
+        if (isSelected)
         {
             if(updatePhase == XRInteractionUpdateOrder.UpdatePhase.Dynamic)
             {
@@ -52,13 +76,23 @@ public class fishingRodTests : XRGrabInteractable
     }
 
     private void HookThrow()
-    {                            
-
+    {
         Vector3 velocity = controllerVelocity ? controllerVelocity.Velocity : Vector3.zero;
-        var inputDevices = new List<UnityEngine.XR.InputDevice>();
-        UnityEngine.XR.InputDevices.GetDevices(inputDevices);
-        
-        foreach (var device in inputDevices)
+        var controllers = new List<UnityEngine.XR.InputDevice>();
+
+        switch (controllerNum)
+        {
+            case 0:
+                var desiredCharacteristicsLeft = UnityEngine.XR.InputDeviceCharacteristics.HeldInHand | UnityEngine.XR.InputDeviceCharacteristics.Left | UnityEngine.XR.InputDeviceCharacteristics.Controller;
+                UnityEngine.XR.InputDevices.GetDevicesWithCharacteristics(desiredCharacteristicsLeft, controllers);
+                break;
+            case 1:
+                var desiredCharacteristicsRight = UnityEngine.XR.InputDeviceCharacteristics.HeldInHand | UnityEngine.XR.InputDeviceCharacteristics.Right | UnityEngine.XR.InputDeviceCharacteristics.Controller;
+                UnityEngine.XR.InputDevices.GetDevicesWithCharacteristics(desiredCharacteristicsRight, controllers);
+                break;
+        }
+
+        foreach (var device in controllers)
         {
             bool triggerValue;
             bool primBtnValue;
@@ -67,17 +101,17 @@ public class fishingRodTests : XRGrabInteractable
             relativeDifference = hook.transform.position - rod.transform.position;
 
             if (device.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValue) && triggerValue)
-                {        
+            {
 
-                    if(device.TryGetFeatureValue(UnityEngine.XR.CommonUsages.secondaryButton, out secBtnValue) && secBtnValue)
+                if (device.TryGetFeatureValue(UnityEngine.XR.CommonUsages.secondaryButton, out secBtnValue) && secBtnValue)
                 {
-                    if(isThrown == false)
+                    if (isThrown == false)
                     {
                         var hookBody = hook.GetComponent<Rigidbody>();
                         var hookJoint = hook.GetComponent<HingeJoint>();
                         Destroy(hookJoint);
                         Debug.Log(velocity);
-                        hookBody.AddForce(velocity*5, ForceMode.Impulse);
+                        hookBody.AddForce(velocity * 5, ForceMode.Impulse);
                         hasJoint = false;
                         isThrown = true;
 
@@ -85,13 +119,12 @@ public class fishingRodTests : XRGrabInteractable
 
                 }
 
-                }
-                if(device.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primaryButton, out primBtnValue) && primBtnValue)
-            {   Debug.Log("status: " + hasJoint);
-                if (hasJoint == false)
+            }
+            if (device.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primaryButton, out primBtnValue) && primBtnValue)
+            {
+                if (hasJoint == false && isFishing == false)
                 {
 
-                    Debug.Log("called");
                     var hookBody = hook.GetComponent<Rigidbody>();
                     hookBody.velocity = Vector3.zero;
                     hookBody.angularVelocity = Vector3.zero;
@@ -104,9 +137,10 @@ public class fishingRodTests : XRGrabInteractable
                 }
 
             }
+        }
+        
 
         }
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -117,7 +151,41 @@ public class fishingRodTests : XRGrabInteractable
     // Update is called once per frame
     void Update()
     {
-
+       // bool joystickVal;
+      //  bool firstExecution = true;
+       /* if (inputDevices[controllerNum].TryGetFeatureValue(UnityEngine.XR.CommonUsages.primary2DAxisClick, out joystickVal) && joystickVal)
+        {
+            if (firstExecution)
+            {
+                if (rodToggle)
+                {
+                    rodToggle = false;
+                   // spawnRod();
+                }
+                else
+                {
+                    rodToggle = true;
+                }
+                firstExecution = false;
+            }
+        }
+        else
+        {
+            firstExecution = true;
+        }*/
     }
 
+
+   /* void spawnRod()
+    {
+        switch (rodHand)
+        {
+            case true:
+                leftHand.GetComponent<XRRayInteractor>().IsSelecting(this);
+                break;
+            case false:
+                rightHand.GetComponent<XRRayInteractor>().IsSelecting(this);
+                break;
+        }
+    }*/
 }
