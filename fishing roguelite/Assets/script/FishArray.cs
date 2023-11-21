@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI.Table;
 
@@ -53,11 +54,12 @@ public class fishArray : MonoBehaviour
     private void handleFish()
     {
         Debug.Log("triggered");
-        Instantiate(pickedFish);
+        GameObject fish = Instantiate(pickedFish);
+        
         Debug.Log(hook.transform.position);
-        pickedFish.transform.position = hook.transform.position;
-        Debug.Log(pickedFish.transform.position);
-        pickedFish.GetComponent<HingeJoint>().connectedBody = hook.GetComponent<Rigidbody>();
+        fish.transform.position = hook.transform.position;
+        Debug.Log(fish.transform.position);
+        fish.GetComponent<HingeJoint>().connectedBody = hook.GetComponent<Rigidbody>();
        /* var hookBody = hook.GetComponent<Rigidbody>();
         hookBody.velocity = Vector3.zero;
         hookBody.angularVelocity = Vector3.zero;

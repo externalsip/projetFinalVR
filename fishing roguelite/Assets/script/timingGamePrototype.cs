@@ -26,8 +26,7 @@ public class timingGamePrototype : MonoBehaviour
     void Start()
     {
         //Defines the routine used for the fish RNG and starts it (it is a test which is why the routine is started on launch)
-        FishRountine = FishRng();
-        StartCoroutine(FishRountine);
+
 
     }
 
@@ -187,15 +186,6 @@ public class timingGamePrototype : MonoBehaviour
     }
 
     //The following functions are what will actually trigger the loop in the real game, as the hook will trigger the coroutine when it goes in the water.
-    private void OnTriggerEnter(Collider other)
-    {
-        switch (other.tag)
-        {
-            case "water":
-                StartCoroutine(FishRountine);
-                break;
-        }
-    }
 
     private void OnTriggerExit(Collider other)
     {
@@ -207,8 +197,20 @@ public class timingGamePrototype : MonoBehaviour
         }
     }
 
+    public void hookInWater()
+    {
+        FishRountine = FishRng().GetEnumerator();
+        StartCoroutine(FishRountine);
+    }
+
+    public void hookOutwater()
+    {
+        Debug.Log("stopped");
+        StopCoroutine(FishRountine);
+    }
+
     //The fishRNG coroutine rolls a number every few seconds, if the number is correct, the fishing minigame start, this will be enhanced sometimes in the future to also run the rng of what fish was caught depending on some factors such as where the player is or what time it is, the fish itself will also determine what the difficulty of the mini-game will be.
-    private IEnumerator FishRng()
+    private IEnumerable FishRng()
     {
         Debug.Log("Rolling");
         int FishNumber = Random.Range(0, 4);
@@ -218,6 +220,7 @@ public class timingGamePrototype : MonoBehaviour
         {
             fishingRodTests.isFishing = true;
             Debug.Log("Fish!!!");
+            playerScore = 5;
             IsFishOnHook = true;
             this.GetComponent<Animator>().Play("Base Layer.cubeAnimation", 0, 0);
             yield return null;
@@ -226,7 +229,7 @@ public class timingGamePrototype : MonoBehaviour
         {
             Debug.Log("reroll");
             yield return new WaitForSeconds(2f);
-            StartCoroutine(FishRng());
+            StartCoroutine(FishRng().GetEnumerator());
             yield return null;
         }
     }

@@ -15,4 +15,9 @@ public class breakHinge : MonoBehaviour
     {
         
     }
+
+    public void breakingHinge()
+    {
+        Destroy(this.GetComponent<HingeJoint>());
+    }
 }
