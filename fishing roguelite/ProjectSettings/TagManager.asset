@@ -10,6 +10,12 @@ TagManager:
   - hookHint
   - leftHand
   - rightHand
+  - area1
+  - area2
+  - area3
+  - area4
+  - area5
+  - area6
   layers:
   - Default
   - TransparentFX
