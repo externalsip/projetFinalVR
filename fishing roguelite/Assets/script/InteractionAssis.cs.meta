@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 5fbc4b219b3848d4d9e2543bc28aa418
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - banc: {instanceID: 0}
+  - rameGauchePrefab: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
