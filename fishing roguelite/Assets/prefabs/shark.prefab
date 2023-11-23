@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 195a98cd85bdf014f937c56e39c80c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 41
+  ID: 6
   Name: Requin
   Description: No way Gawr Gura???????
   Worth: 1000

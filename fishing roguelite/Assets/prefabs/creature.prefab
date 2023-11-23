@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 195a98cd85bdf014f937c56e39c80c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 20
+  ID: 3
   Name: Creature
   Description: "Je ne sais pas ce que c'est suppos\xE9 \xEAtre"
   Worth: 200

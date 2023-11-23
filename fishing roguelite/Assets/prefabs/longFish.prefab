@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 195a98cd85bdf014f937c56e39c80c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 22
+  ID: 0
   Name: Poisson Long
   Description: "Il est relativement long. C'est pas mal \xE7a."
   Worth: 0

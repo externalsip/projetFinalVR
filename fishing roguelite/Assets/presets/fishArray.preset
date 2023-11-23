@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: fishArray
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: abc920795b3d3304899a84997cf9ec11,
+      type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: hook
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: hint
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: rod
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: commonFishArr.Array.size
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: uncommonFishArr.Array.size
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: uncommonFishArr.Array.data[0]
+    value: 
+    objectReference: {fileID: 6616080908663630761, guid: 83315b41c5afc31428e10bd468d1bc9e,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: uncommonFishArr.Array.data[1]
+    value: 
+    objectReference: {fileID: 2023689114080226400, guid: be35d9df7fd625749a08f00887c654d2,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: uncommonFishArr.Array.data[2]
+    value: 
+    objectReference: {fileID: 5029642140834425236, guid: d3bae2c8b65f19449aedebb1c58ff38f,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: uncommonFishArr.Array.data[3]
+    value: 
+    objectReference: {fileID: 8102367790626080014, guid: c2679bb5a5cf333439da013b0046d081,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: rareFishArr.Array.size
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: rareFishArr.Array.data[0]
+    value: 
+    objectReference: {fileID: 1071234501214056965, guid: ff227bc83157c544299a05e6ed2939a0,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: rareFishArr.Array.data[1]
+    value: 
+    objectReference: {fileID: 997785415236676692, guid: 9ad913e504d484f45846784ef556d8c5,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: allFishArr.Array.size
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: allFishArr.Array.data[0]
+    value: 
+    objectReference: {fileID: 8102367790626080014, guid: c2679bb5a5cf333439da013b0046d081,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: allFishArr.Array.data[1]
+    value: 
+    objectReference: {fileID: 6616080908663630761, guid: 83315b41c5afc31428e10bd468d1bc9e,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: allFishArr.Array.data[2]
+    value: 
+    objectReference: {fileID: 2023689114080226400, guid: be35d9df7fd625749a08f00887c654d2,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: allFishArr.Array.data[3]
+    value: 
+    objectReference: {fileID: 5029642140834425236, guid: d3bae2c8b65f19449aedebb1c58ff38f,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: allFishArr.Array.data[4]
+    value: 
+    objectReference: {fileID: 8473420740146512545, guid: 74eea48aaf48de04a9ac93b3d32e0e52,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: allFishArr.Array.data[5]
+    value: 
+    objectReference: {fileID: 1071234501214056965, guid: ff227bc83157c544299a05e6ed2939a0,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: allFishArr.Array.data[6]
+    value: 
+    objectReference: {fileID: 997785415236676692, guid: 9ad913e504d484f45846784ef556d8c5,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: fishingRodTests
+    value: 
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []

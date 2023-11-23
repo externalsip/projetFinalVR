@@ -17,6 +17,8 @@ public class boatMove : MonoBehaviour
 
     private Vector3 forward = new Vector3 (1f, 0f, 0f);
 
+    public float maxSpeed = 1f;
+
     public bool rightSelected = false;
     public bool leftSelected = false;
     public bool bothSelected = false;
@@ -36,6 +38,8 @@ public class boatMove : MonoBehaviour
         rightPos.y = 0f;
         leftPos = leftHint.transform.rotation.eulerAngles;
         leftPos.y = 0f;
+        Vector3 leftVelocity = leftHint.GetComponent<Rigidbody>().velocity;
+        Vector3 rightVelocity = rightHint.GetComponent<Rigidbody>().velocity;
         if (this.GetComponent<Rigidbody>().velocity.magnitude <= 0.5f)
         {
 
@@ -43,7 +47,7 @@ public class boatMove : MonoBehaviour
             if (bothSelected)
             {
                 Debug.Log("both");
-                this.GetComponent<Rigidbody>().AddForce(((rightPos.x + leftPos.x) / 20) * Time.deltaTime, 0f, 0f);
+                this.GetComponent<Rigidbody>().AddForce(((leftVelocity + rightVelocity) / 20) * Time.deltaTime);
             }
 
             else if (leftSelected)
@@ -51,7 +55,7 @@ public class boatMove : MonoBehaviour
                 if (leftPos.x / oldLeftPos.x >= 2)
                 {
                     Debug.Log("left");
-                    this.GetComponent<Rigidbody>().AddForce(0f, 0f, (leftPos.x / 15) * Time.deltaTime);
+                    this.GetComponent<Rigidbody>().AddForce(0f, 0f, (leftVelocity.x) * Time.deltaTime);
                 }
             }
 
@@ -60,7 +64,7 @@ public class boatMove : MonoBehaviour
                 if (rightPos.x / oldRightPos.x >= 2)
                 {
                     Debug.Log("right");
-                    this.GetComponent<Rigidbody>().AddForce(0f, 0f, (rightPos.x / 15) * Time.deltaTime);
+                    this.GetComponent<Rigidbody>().AddForce(0f, 0f, (rightVelocity.x / 15) * Time.deltaTime);
                 }
 
             }
@@ -73,6 +77,7 @@ public class boatMove : MonoBehaviour
             oldRightPos = rightPos;
             oldLeftPos = leftPos;
         }
+        this.GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(this.GetComponent<Rigidbody>().velocity, maxSpeed);
     }
 
     public void selectRight()

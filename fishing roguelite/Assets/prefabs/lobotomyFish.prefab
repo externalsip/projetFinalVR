@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 195a98cd85bdf014f937c56e39c80c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 22
+  ID: 1
   Name: Lobotomy Fish
   Description: "Qu'est-ce que travailler sur WordPress fait \xE0 un homme."
   Worth: 210

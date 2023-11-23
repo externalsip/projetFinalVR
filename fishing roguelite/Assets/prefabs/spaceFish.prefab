@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 195a98cd85bdf014f937c56e39c80c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 24
+  ID: 4
   Name: SpaceFish
   Description: "Il a \xE9t\xE9 o\xF9 aucun autre poisson n'a nag\xE9."
   Worth: 200
