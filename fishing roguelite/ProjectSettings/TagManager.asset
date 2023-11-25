@@ -16,6 +16,7 @@ TagManager:
   - area4
   - area5
   - area6
+  - JourEnCours
   layers:
   - Default
   - TransparentFX
