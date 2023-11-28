@@ -262,6 +262,52 @@ MonoBehaviour:
   ambientProbeDimmer:
     m_OverrideState: 0
     m_Value: 1
+--- !u!114 &-2892732587054707537
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24f077503be6ae942a1e1245dbd53ea9, type: 3}
+  m_Name: Bloom
+  m_EditorClassIdentifier: 
+  active: 1
+  quality:
+    m_OverrideState: 1
+    m_Value: 1
+  threshold:
+    m_OverrideState: 1
+    m_Value: 1
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.284
+  scatter:
+    m_OverrideState: 1
+    m_Value: 0.396
+  tint:
+    m_OverrideState: 1
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+  dirtTexture:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+  dirtIntensity:
+    m_OverrideState: 0
+    m_Value: 0
+  anamorphic:
+    m_OverrideState: 0
+    m_Value: 1
+  m_Resolution:
+    m_OverrideState: 1
+    m_Value: 2
+  m_HighQualityPrefiltering:
+    m_OverrideState: 1
+    m_Value: 0
+  m_HighQualityFiltering:
+    m_OverrideState: 1
+    m_Value: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,6 +326,7 @@ MonoBehaviour:
   - {fileID: -4151792930034644520}
   - {fileID: 7642060734654139733}
   - {fileID: -3780192680120912860}
+  - {fileID: -2892732587054707537}
 --- !u!114 &1142777632297148762
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -301,7 +348,7 @@ MonoBehaviour:
     m_Value: 0
   skyAmbientMode:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   windOrientation:
     m_OverrideState: 0
     m_Value: 0

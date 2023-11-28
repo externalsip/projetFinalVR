@@ -68,12 +68,7 @@ public class boatMove : MonoBehaviour
                 }
 
             }
-            else
-            {
-                if(this.GetComponent<Rigidbody>().velocity.magnitude > 0f){
-                    this.GetComponent<Rigidbody>().velocity *= 0.2f * Time.deltaTime;
-                }
-            }
+
             oldRightPos = rightPos;
             oldLeftPos = leftPos;
         }

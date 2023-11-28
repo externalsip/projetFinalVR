@@ -542,7 +542,7 @@ GameObject:
   - component: {fileID: 1523756942}
   m_Layer: 0
   m_Name: Ocean
-  m_TagString: Untagged
+  m_TagString: water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -559,7 +559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f6fd535518f5540b4bcc3099582f77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surfaceType: 0
+  surfaceType: 2
   geometryType: 0
   mesh: {fileID: 0}
   cpuSimulation: 1

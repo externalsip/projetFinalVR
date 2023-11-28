@@ -6,6 +6,7 @@ public class ObjectFloat : MonoBehaviour
 {
 
     public Rigidbody rb;
+    public GameObject water;
     public float depthBeforeSubmerged = 1f;
     public float displacementAmount = 3f;
     private bool isObjectInWater = false;
@@ -18,10 +19,10 @@ public class ObjectFloat : MonoBehaviour
             rb.AddForceAtPosition(Physics.gravity, transform.position, ForceMode.Acceleration);
             float waveHeight = handleWave.instance.GetWaveHeight(transform.position.x);
             Debug.Log("triggered");
-            if(transform.position.y < waveHeight)
+            if(transform.position.y < water.GetComponent<Rigidbody>().transform.position.y)
             {
                 Debug.Log("float");
-                float displacementMultiplier = Mathf.Clamp01((waveHeight-transform.position.y) / depthBeforeSubmerged) * displacementAmount;
+                float displacementMultiplier = Mathf.Clamp01(transform.position.y / depthBeforeSubmerged) * displacementAmount;
                 rb.AddForce(new Vector3(0f, Mathf.Abs(Physics.gravity.y) * displacementMultiplier, 0f), ForceMode.Acceleration);
             }
         }

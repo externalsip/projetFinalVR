@@ -108,7 +108,7 @@ public class fishingRodTests : XRGrabInteractable
                     if (isThrown == false)
                     {
                         var hookBody = hook.GetComponent<Rigidbody>();
-                        var hookJoint = hook.GetComponent<HingeJoint>();
+                        var hookJoint = hook.GetComponent<CharacterJoint>();
                         Destroy(hookJoint);
                         Debug.Log(velocity);
                         hookBody.AddForce(velocity * 5, ForceMode.Impulse);
@@ -129,8 +129,8 @@ public class fishingRodTests : XRGrabInteractable
                     hookBody.velocity = Vector3.zero;
                     hookBody.angularVelocity = Vector3.zero;
                     hook.transform.position = hookHint.transform.position;
-                    hook.AddComponent<HingeJoint>();
-                    hook.GetComponent<HingeJoint>().connectedBody = rod.GetComponent<Rigidbody>();
+                    hook.AddComponent<CharacterJoint>();
+                    hook.GetComponent<CharacterJoint>().connectedBody = rod.GetComponent<Rigidbody>();
 
                     hasJoint = true;
                     isThrown = false;
