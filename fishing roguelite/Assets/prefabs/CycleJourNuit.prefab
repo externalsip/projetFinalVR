@@ -47,3 +47,6 @@ MonoBehaviour:
   sunTransform: {fileID: 0}
   moonTransform: {fileID: 0}
   vitesseRotation: 1
+  Soleil: {fileID: 0}
+  jour: {fileID: 0}
+  joursPasse: 0
