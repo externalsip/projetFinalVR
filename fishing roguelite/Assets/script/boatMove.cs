@@ -55,7 +55,7 @@ public class boatMove : MonoBehaviour
                 if (leftPos.x / oldLeftPos.x >= 2)
                 {
                     Debug.Log("left");
-                    this.GetComponent<Rigidbody>().AddForce(0f, 0f, (leftVelocity.x) * Time.deltaTime);
+                    this.GetComponent<Rigidbody>().AddForce(0f, 0f, (leftVelocity.x / 50) * Time.deltaTime);
                 }
             }
 
@@ -64,9 +64,14 @@ public class boatMove : MonoBehaviour
                 if (rightPos.x / oldRightPos.x >= 2)
                 {
                     Debug.Log("right");
-                    this.GetComponent<Rigidbody>().AddForce(0f, 0f, (rightVelocity.x / 15) * Time.deltaTime);
+                    this.GetComponent<Rigidbody>().AddForce(0f, 0f, (rightVelocity.x / 50) * Time.deltaTime);
                 }
 
+            }
+
+            else
+            {
+                this.GetComponent<Rigidbody>().velocity = Vector3.zero;
             }
 
             oldRightPos = rightPos;
