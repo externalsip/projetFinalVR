@@ -17,6 +17,7 @@ TagManager:
   - area5
   - area6
   - JourEnCours
+  - LeverTrigger
   layers:
   - Default
   - TransparentFX

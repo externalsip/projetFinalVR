@@ -17,7 +17,6 @@ public class ObjectFloat : MonoBehaviour
         if (isObjectInWater)
         {
             rb.AddForceAtPosition(Physics.gravity, transform.position, ForceMode.Acceleration);
-            float waveHeight = handleWave.instance.GetWaveHeight(transform.position.x);
             Debug.Log("triggered");
             if(transform.position.y < water.GetComponent<Rigidbody>().transform.position.y)
             {

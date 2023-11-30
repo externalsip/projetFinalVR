@@ -43,7 +43,6 @@ public class boatMove : MonoBehaviour
         if (this.GetComponent<Rigidbody>().velocity.magnitude <= 0.5f)
         {
 
-            Debug.Log(this.GetComponent<Rigidbody>().velocity.magnitude);
             if (bothSelected)
             {
                 Debug.Log("both");
@@ -55,7 +54,7 @@ public class boatMove : MonoBehaviour
                 if (leftPos.x / oldLeftPos.x >= 2)
                 {
                     Debug.Log("left");
-                    this.GetComponent<Rigidbody>().AddForce(0f, 0f, (leftVelocity.x / 50) * Time.deltaTime);
+                    this.GetComponent<Rigidbody>().AddForce((leftVelocity * -1) * Time.deltaTime);
                 }
             }
 
@@ -64,7 +63,8 @@ public class boatMove : MonoBehaviour
                 if (rightPos.x / oldRightPos.x >= 2)
                 {
                     Debug.Log("right");
-                    this.GetComponent<Rigidbody>().AddForce(0f, 0f, (rightVelocity.x / 50) * Time.deltaTime);
+                    this.GetComponent<Rigidbody>().AddForce(rightVelocity * Time.deltaTime);
+                    Debug.Log(this.GetComponent<Rigidbody>().velocity);
                 }
 
             }
