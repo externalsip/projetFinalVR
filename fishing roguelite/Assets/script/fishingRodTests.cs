@@ -131,6 +131,8 @@ public class fishingRodTests : XRGrabInteractable
                     hook.transform.position = hookHint.transform.position;
                     hook.AddComponent<CharacterJoint>();
                     hook.GetComponent<CharacterJoint>().connectedBody = rod.GetComponent<Rigidbody>();
+                    hook.GetComponent<CharacterJoint>().anchor = new Vector3(0, 0.69f, 0);
+                    hook.GetComponent<CharacterJoint>().axis = new Vector3(1, 0, 0);
 
                     hasJoint = true;
                     isThrown = false;
@@ -141,6 +143,22 @@ public class fishingRodTests : XRGrabInteractable
         
 
         }
+
+    public void reAttachHook()
+    {
+        if(hook.GetComponent<CharacterJoint>() == null)
+        {
+            var hookBody = hook.GetComponent<Rigidbody>();
+            hookBody.velocity = Vector3.zero;
+            hookBody.angularVelocity = Vector3.zero;
+            hook.transform.position = hookHint.transform.position;
+            hook.AddComponent<CharacterJoint>();
+            hook.GetComponent<CharacterJoint>().connectedBody = rod.GetComponent<Rigidbody>();
+            hook.GetComponent<CharacterJoint>().anchor = new Vector3(0, 0.69f, 0);
+            hook.GetComponent<CharacterJoint>().axis = new Vector3(1, 0, 0);
+        }
+    }
+
 
     // Start is called before the first frame update
     void Start()

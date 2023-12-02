@@ -9,13 +9,14 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class timingGamePrototype : MonoBehaviour
 {
     private int playerScore = 5;
-    private bool BadPress = false;
-    private bool GoodPress = false;
-    private bool GreatPress = false;
-    private bool PerfectPress = false;
+    public bool BadPress = false;
+    public bool GoodPress = false;
+    public bool GreatPress = false;
+    public bool PerfectPress = false;
     public bool IsFishOnHook = false;
     public IEnumerator FishRountine;
 
+    public GameObject timingGameObject;
     public fishArray fishArray;
 
     public fishingRodTests fishingRodTests;
@@ -92,7 +93,7 @@ public class timingGamePrototype : MonoBehaviour
                     }
                     firstActivation = false;
                     Debug.Log(firstActivation);
-                    this.GetComponent<Animator>().Play("Base Layer.cubeAnimation", 0, 0);
+                    timingGameObject.GetComponent<Animator>().Play("Base Layer.cubeAnimation", 0, 0);
                 }
                 else if (device.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primaryButton, out primBtnValue) && primBtnValue == false && firstActivation == false)
                 {
@@ -108,7 +109,8 @@ public class timingGamePrototype : MonoBehaviour
         {
                 //If the player gets more than 20 points, he wins, what this entails has not been programmed yet, as I will need to figure out some stuff first.
             Debug.Log("Big Win");
-                this.GetComponent<Animator>().Play("Base Layer.Idle", 0, 0);
+                timingGameObject.SetActive(false);
+                timingGameObject.GetComponent<Animator>().Play("Base Layer.Idle", 0, 0);
                 int fishNumber = Random.Range(50, 100);
                  if(fishNumber >= 1 && fishNumber < 50)
                  {
@@ -136,10 +138,11 @@ public class timingGamePrototype : MonoBehaviour
         if(playerScore < 0)
         {
                 //If the player gets to 0 points, he loses, for now it has no repercussions, but if we end up doing the roguelite he will lose a bait
-                this.GetComponent<Animator>().Play("Base Layer.Idle", 0, 0);
+                timingGameObject.GetComponent<Animator>().Play("Base Layer.Idle", 0, 0);
                 IsFishOnHook = false;
                 fishingRodTests.isFishing = false;
-        }
+                timingGameObject.SetActive(false);
+            }
     }
         }
     public void miss()
@@ -147,43 +150,12 @@ public class timingGamePrototype : MonoBehaviour
         //If the player does not hit the button before the end of the animation, it is considered a miss.
             Debug.Log("Miss");
             playerScore = playerScore - 3;
-            this.GetComponent<Animator>().Play("Base Layer.cubeAnimation", 0, 0);
+            timingGameObject.GetComponent<Animator>().Play("Base Layer.cubeAnimation", 0, 0);
     }
     
 
     //The following 4 functions are linked to animation events, to determine what is the current result of the player hitting the key.
-    public void switchBad()
-    {
-        Debug.Log("toGood");
-        BadPress = true;
-        GoodPress = false;
-        GreatPress = false;
-        PerfectPress = false;
-    }
-    public void switchGood()
-    {
-        Debug.Log("toGreat");
-        BadPress = false;
-        GoodPress = true;
-        GreatPress = false;
-        PerfectPress = false;
-    }
-    public void switchGreat()
-    {
-        Debug.Log("toPerfect");
-        BadPress = false;
-        GoodPress = false;
-        GreatPress = true;
-        PerfectPress = false;
-    }
-    public void switchPerfect()
-    {
-        Debug.Log("toBad");
-        BadPress = false;
-        GoodPress = false;
-        GreatPress = false;
-        PerfectPress = true;
-    }
+
 
     //The following functions are what will actually trigger the loop in the real game, as the hook will trigger the coroutine when it goes in the water.
 
@@ -220,9 +192,10 @@ public class timingGamePrototype : MonoBehaviour
         {
             fishingRodTests.isFishing = true;
             Debug.Log("Fish!!!");
+            timingGameObject.SetActive(true);
             playerScore = 5;
             IsFishOnHook = true;
-            this.GetComponent<Animator>().Play("Base Layer.cubeAnimation", 0, 0);
+            timingGameObject.GetComponent<Animator>().Play("Base Layer.cubeAnimation", 0, 0);
             yield return null;
         }
         else

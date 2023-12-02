@@ -18,6 +18,9 @@ TagManager:
   - area6
   - JourEnCours
   - LeverTrigger
+  - rightZone
+  - neutralZone
+  - leftZone
   layers:
   - Default
   - TransparentFX
