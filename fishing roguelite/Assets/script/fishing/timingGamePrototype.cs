@@ -8,7 +8,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class timingGamePrototype : MonoBehaviour
 {
-    private int playerScore = 5;
+    public int playerScore = 5;
     public bool BadPress = false;
     public bool GoodPress = false;
     public bool GreatPress = false;
@@ -93,7 +93,7 @@ public class timingGamePrototype : MonoBehaviour
                     }
                     firstActivation = false;
                     Debug.Log(firstActivation);
-                    timingGameObject.GetComponent<Animator>().Play("Base Layer.cubeAnimation", 0, 0);
+                    timingGameObject.GetComponent<Animator>().Play("Base Layer.spriteCircle", 0, 0);
                 }
                 else if (device.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primaryButton, out primBtnValue) && primBtnValue == false && firstActivation == false)
                 {
@@ -145,13 +145,7 @@ public class timingGamePrototype : MonoBehaviour
             }
     }
         }
-    public void miss()
-    {
-        //If the player does not hit the button before the end of the animation, it is considered a miss.
-            Debug.Log("Miss");
-            playerScore = playerScore - 3;
-            timingGameObject.GetComponent<Animator>().Play("Base Layer.cubeAnimation", 0, 0);
-    }
+
     
 
     //The following 4 functions are linked to animation events, to determine what is the current result of the player hitting the key.
@@ -195,7 +189,7 @@ public class timingGamePrototype : MonoBehaviour
             timingGameObject.SetActive(true);
             playerScore = 5;
             IsFishOnHook = true;
-            timingGameObject.GetComponent<Animator>().Play("Base Layer.cubeAnimation", 0, 0);
+            timingGameObject.GetComponent<Animator>().Play("Base Layer.spriteCircle", 0, 0);
             yield return null;
         }
         else

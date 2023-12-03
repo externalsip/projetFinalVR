@@ -5,12 +5,8 @@ using UnityEngine;
 public class timingHint : MonoBehaviour
 {
     public timingGamePrototype timing;
-    public GameObject hook;
 
-    private void Update()
-    {
-        this.transform.position = new Vector3(hook.transform.position.x, this.transform.position.y, hook.transform.position.z);
-    }
+
     public void switchBad()
     {
         Debug.Log("toGood");
@@ -42,5 +38,13 @@ public class timingHint : MonoBehaviour
         timing.GoodPress = false;
         timing.GreatPress = false;
         timing.PerfectPress = true;
+    }
+
+    public void miss()
+    {
+        //If the player does not hit the button before the end of the animation, it is considered a miss.
+        Debug.Log("Miss");
+        timing.playerScore = timing.playerScore - 3;
+        this.GetComponent<Animator>().Play("Base Layer.spriteCircle", 0, 0);
     }
 }

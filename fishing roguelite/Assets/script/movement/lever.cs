@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class lever : MonoBehaviour
 {
 
     public GameObject boat;
     private Rigidbody rb;
-
 
     private bool isLeverOn = false;
     public float maxSpeed = 1f;

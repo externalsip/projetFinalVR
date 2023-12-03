@@ -31,7 +31,7 @@ public class handleBasket : MonoBehaviour
             var fish = collision.gameObject;
             int fishWorth = fish.GetComponent<fishData>().Worth;
             Debug.Log(fishWorth);
-            fishNumber.text = "Nombre de Poissons: " + fishAmount.ToString();
+            fishNumber.text = "Poissons: " + fishAmount.ToString();
             fishValue.text = "Valeur du Poisson: " + fishWorth.ToString();
             playerInventory.addSlot();
             playerInventory.playerInventoryContent[playerInventory.playerInventoryContent.Length - 1] = fish;
