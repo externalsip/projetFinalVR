@@ -173,22 +173,22 @@ public class fishingRodTests : XRGrabInteractable
         }
     }
 
-    void PlayCastingLine()
+    public void PlayCastingLine()
     {
         audioSource.clip = castLine;
         audioSource.Play();
     }
-    void PlayCastingLineLong()
+    public void PlayCastingLineLong()
     {
         audioSource.clip = castLineLong;
         audioSource.Play();
     }
-    void PlayClick()
+    public void PlayClick()
     {
         audioSource.clip = click;
         audioSource.Play();
     }
-    void FishCaught()
+    public void FishCaught()
     {
         audioSource.clip = castLineLong;
         audioSource.Play();
