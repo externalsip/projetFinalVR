@@ -25,6 +25,12 @@ public class fishingRodTests : XRGrabInteractable
     public int controllerNum;
 
     public bool rodToggle = false;
+    public AudioClip castLine;      // Son de canne à pêche
+    public AudioClip castLineLong;      // Son de canne à pêche long
+    public AudioClip click;
+    public AudioClip fishSound;
+    private AudioSource audioSource;
+
 
     protected override void Awake()
     {
@@ -69,7 +75,6 @@ public class fishingRodTests : XRGrabInteractable
         {
             if(updatePhase == XRInteractionUpdateOrder.UpdatePhase.Dynamic)
             {
-
                 HookThrow();
             }
         }
@@ -85,10 +90,12 @@ public class fishingRodTests : XRGrabInteractable
             case 0:
                 var desiredCharacteristicsLeft = UnityEngine.XR.InputDeviceCharacteristics.HeldInHand | UnityEngine.XR.InputDeviceCharacteristics.Left | UnityEngine.XR.InputDeviceCharacteristics.Controller;
                 UnityEngine.XR.InputDevices.GetDevicesWithCharacteristics(desiredCharacteristicsLeft, controllers);
+
                 break;
             case 1:
                 var desiredCharacteristicsRight = UnityEngine.XR.InputDeviceCharacteristics.HeldInHand | UnityEngine.XR.InputDeviceCharacteristics.Right | UnityEngine.XR.InputDeviceCharacteristics.Controller;
                 UnityEngine.XR.InputDevices.GetDevicesWithCharacteristics(desiredCharacteristicsRight, controllers);
+
                 break;
         }
 
@@ -107,6 +114,7 @@ public class fishingRodTests : XRGrabInteractable
                 {
                     if (isThrown == false)
                     {
+                        PlayCastingLineLong();
                         var hookBody = hook.GetComponent<Rigidbody>();
                         var hookJoint = hook.GetComponent<CharacterJoint>();
                         Destroy(hookJoint);
@@ -122,9 +130,11 @@ public class fishingRodTests : XRGrabInteractable
             }
             if (device.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primaryButton, out primBtnValue) && primBtnValue)
             {
+
+
                 if (hasJoint == false && isFishing == false)
                 {
-
+                    PlayCastingLine();
                     var hookBody = hook.GetComponent<Rigidbody>();
                     hookBody.velocity = Vector3.zero;
                     hookBody.angularVelocity = Vector3.zero;
@@ -148,6 +158,7 @@ public class fishingRodTests : XRGrabInteractable
     {
         if(!hasJoint && !isFishing)
         {
+            FishCaught();
             var hookBody = hook.GetComponent<Rigidbody>();
             hookBody.velocity = Vector3.zero;
             hookBody.angularVelocity = Vector3.zero;
@@ -162,10 +173,39 @@ public class fishingRodTests : XRGrabInteractable
         }
     }
 
+    void PlayCastingLine()
+    {
+        audioSource.clip = castLine;
+        audioSource.Play();
+    }
+    void PlayCastingLineLong()
+    {
+        audioSource.clip = castLineLong;
+        audioSource.Play();
+    }
+    void PlayClick()
+    {
+        audioSource.clip = click;
+        audioSource.Play();
+    }
+    void FishCaught()
+    {
+        audioSource.clip = castLineLong;
+        audioSource.Play();
+    }
+
 
     // Start is called before the first frame update
     void Start()
     {
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
+        audioSource.loop = false;
 
     }
 
