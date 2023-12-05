@@ -29,8 +29,9 @@ public class fishingRodTests : XRGrabInteractable
     public AudioClip castLineLong;      // Son de canne à pêche long
     public AudioClip click;
     public AudioClip fishSound;
+    public AudioClip whipSound;
     private AudioSource audioSource;
-
+    public float forceMultiplier = 5f;
 
     protected override void Awake()
     {
@@ -115,11 +116,12 @@ public class fishingRodTests : XRGrabInteractable
                     if (isThrown == false)
                     {
                         PlayCastingLineLong();
+                        WhipSound();
                         var hookBody = hook.GetComponent<Rigidbody>();
                         var hookJoint = hook.GetComponent<CharacterJoint>();
                         Destroy(hookJoint);
                         Debug.Log(velocity);
-                        hookBody.AddForce(velocity * 5, ForceMode.Impulse);
+                        hookBody.AddForce(velocity * forceMultiplier, ForceMode.Impulse);
                         hasJoint = false;
                         isThrown = true;
 
@@ -135,6 +137,7 @@ public class fishingRodTests : XRGrabInteractable
                 if (hasJoint == false && isFishing == false)
                 {
                     PlayCastingLine();
+
                     var hookBody = hook.GetComponent<Rigidbody>();
                     hookBody.velocity = Vector3.zero;
                     hookBody.angularVelocity = Vector3.zero;
@@ -176,10 +179,12 @@ public class fishingRodTests : XRGrabInteractable
     public void PlayCastingLine()
     {
         audioSource.clip = castLine;
+
         audioSource.Play();
     }
     public void PlayCastingLineLong()
     {
+        audioSource.clip = whipSound;
         audioSource.clip = castLineLong;
         audioSource.Play();
     }
@@ -191,6 +196,11 @@ public class fishingRodTests : XRGrabInteractable
     public void FishCaught()
     {
         audioSource.clip = castLineLong;
+        audioSource.Play();
+    }
+    public void WhipSound()
+    {
+        audioSource.clip = whipSound;
         audioSource.Play();
     }
 

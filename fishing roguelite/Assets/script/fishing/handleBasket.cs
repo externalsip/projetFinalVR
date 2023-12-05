@@ -34,6 +34,7 @@ public class handleBasket : MonoBehaviour
             fishNumber.text = "Poissons: " + fishAmount.ToString();
             playerInventory.addSlot();
             playerInventory.playerInventoryContent[playerInventory.playerInventoryContent.Length - 1] = fish;
+            this.GetComponent<AudioSource>().Play();
             fish.SetActive(false);
         }
     }
