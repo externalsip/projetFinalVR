@@ -48,7 +48,6 @@ public class fishArray : MonoBehaviour
         int fishNumber = Random.Range(0, rareFishArr.Length - 1);
         pickedFish = rareFishArr[fishNumber];
         handleFish();
-        Debug.Log("instantiated rare");
     }   
 
     private void handleFish()

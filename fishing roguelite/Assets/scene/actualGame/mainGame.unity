@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2169.0696, g: 2370.012, b: 3719.4536, a: 1}
+  m_IndirectSpecularColor: {r: 2169.0178, g: 2370.2659, b: 3720.641, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -349,24 +349,64 @@ MonoBehaviour:
   hook: {fileID: 919132149185953168}
   hint: {fileID: 2007600315}
   rod: {fileID: 919132148779646806}
-  commonFishArr: []
+  commonFishArr:
+  - {fileID: 3855079680686407890, guid: b019df20eb9afd74790b3c624f3a3eb4, type: 3}
+  - {fileID: 1166915764151062048, guid: dcaf6f3ae411b4f4388753baa9c2f9bb, type: 3}
+  - {fileID: 2153033844805893656, guid: 73845e515cc431a418b1fe3447b09dbe, type: 3}
+  - {fileID: 8337009400300489148, guid: 146564bb5eff3a345ac78fe5fc768f06, type: 3}
+  - {fileID: 7985923854409733324, guid: 171ad5579ac29b440bdf0187ac896901, type: 3}
+  - {fileID: 5061270612981730353, guid: 35bbdc1922f626e4a92a3f4be5a1460d, type: 3}
+  - {fileID: 5871060455920285388, guid: a0b35750546fe624f86ee2d2f06fb053, type: 3}
+  - {fileID: 1726537226498808885, guid: 2e7ebb58c68a5d34bb9bfbec31b4c6ee, type: 3}
+  - {fileID: 3160403409492031061, guid: 0f8ad37144bceae4c961fc58aa9f15e3, type: 3}
   uncommonFishArr:
   - {fileID: 6616080908663630761, guid: 83315b41c5afc31428e10bd468d1bc9e, type: 3}
   - {fileID: 2023689114080226400, guid: be35d9df7fd625749a08f00887c654d2, type: 3}
   - {fileID: 5029642140834425236, guid: d3bae2c8b65f19449aedebb1c58ff38f, type: 3}
   - {fileID: 8102367790626080014, guid: c2679bb5a5cf333439da013b0046d081, type: 3}
   - {fileID: 8473420740146512545, guid: 74eea48aaf48de04a9ac93b3d32e0e52, type: 3}
+  - {fileID: 8684196667102048392, guid: 436377932613a7b408e65aec1b454ae9, type: 3}
+  - {fileID: 3366792468073745783, guid: 44148913d027de04ca8d1885a335ec7f, type: 3}
+  - {fileID: 7583892206450846034, guid: 81a039efa118c1541b818fb5f8808200, type: 3}
+  - {fileID: 1612412443085579746, guid: 83d963ed84e2cf343be86e1af61b5444, type: 3}
+  - {fileID: 1833657449557461702, guid: dda4f046462bb9a4dbbc7a638a24f088, type: 3}
+  - {fileID: 7736239804661586779, guid: 305fd5626bed5514d8b1be60660610e4, type: 3}
   rareFishArr:
   - {fileID: 1071234501214056965, guid: ff227bc83157c544299a05e6ed2939a0, type: 3}
   - {fileID: 997785415236676692, guid: 9ad913e504d484f45846784ef556d8c5, type: 3}
+  - {fileID: 4078557038386040360, guid: 7e22abac530faac47b911a656bf9aea4, type: 3}
+  - {fileID: 3835002882774116435, guid: ce70ef449d47a9b4b9d8c3bcb0341d0d, type: 3}
+  - {fileID: 6743529768457230662, guid: 996d5bc9b25bb4b49a903e10e2540fac, type: 3}
+  - {fileID: 1869439269534947240, guid: 1a1cedaeb8dfb8b47b5b71fa95966627, type: 3}
+  - {fileID: 511386706532364640, guid: f657ab971ca884345934f23d1d80742b, type: 3}
   allFishArr:
-  - {fileID: 8102367790626080014, guid: c2679bb5a5cf333439da013b0046d081, type: 3}
+  - {fileID: 3855079680686407890, guid: b019df20eb9afd74790b3c624f3a3eb4, type: 3}
+  - {fileID: 1166915764151062048, guid: dcaf6f3ae411b4f4388753baa9c2f9bb, type: 3}
+  - {fileID: 2153033844805893656, guid: 73845e515cc431a418b1fe3447b09dbe, type: 3}
+  - {fileID: 8337009400300489148, guid: 146564bb5eff3a345ac78fe5fc768f06, type: 3}
+  - {fileID: 7985923854409733324, guid: 171ad5579ac29b440bdf0187ac896901, type: 3}
+  - {fileID: 5061270612981730353, guid: 35bbdc1922f626e4a92a3f4be5a1460d, type: 3}
+  - {fileID: 5871060455920285388, guid: a0b35750546fe624f86ee2d2f06fb053, type: 3}
+  - {fileID: 1726537226498808885, guid: 2e7ebb58c68a5d34bb9bfbec31b4c6ee, type: 3}
+  - {fileID: 3160403409492031061, guid: 0f8ad37144bceae4c961fc58aa9f15e3, type: 3}
   - {fileID: 6616080908663630761, guid: 83315b41c5afc31428e10bd468d1bc9e, type: 3}
   - {fileID: 2023689114080226400, guid: be35d9df7fd625749a08f00887c654d2, type: 3}
   - {fileID: 5029642140834425236, guid: d3bae2c8b65f19449aedebb1c58ff38f, type: 3}
+  - {fileID: 8102367790626080014, guid: c2679bb5a5cf333439da013b0046d081, type: 3}
   - {fileID: 8473420740146512545, guid: 74eea48aaf48de04a9ac93b3d32e0e52, type: 3}
+  - {fileID: 8684196667102048392, guid: 436377932613a7b408e65aec1b454ae9, type: 3}
+  - {fileID: 3366792468073745783, guid: 44148913d027de04ca8d1885a335ec7f, type: 3}
+  - {fileID: 7583892206450846034, guid: 81a039efa118c1541b818fb5f8808200, type: 3}
+  - {fileID: 1612412443085579746, guid: 83d963ed84e2cf343be86e1af61b5444, type: 3}
+  - {fileID: 1833657449557461702, guid: dda4f046462bb9a4dbbc7a638a24f088, type: 3}
+  - {fileID: 7736239804661586779, guid: 305fd5626bed5514d8b1be60660610e4, type: 3}
   - {fileID: 1071234501214056965, guid: ff227bc83157c544299a05e6ed2939a0, type: 3}
   - {fileID: 997785415236676692, guid: 9ad913e504d484f45846784ef556d8c5, type: 3}
+  - {fileID: 4078557038386040360, guid: 7e22abac530faac47b911a656bf9aea4, type: 3}
+  - {fileID: 3835002882774116435, guid: ce70ef449d47a9b4b9d8c3bcb0341d0d, type: 3}
+  - {fileID: 6743529768457230662, guid: 996d5bc9b25bb4b49a903e10e2540fac, type: 3}
+  - {fileID: 1869439269534947240, guid: 1a1cedaeb8dfb8b47b5b71fa95966627, type: 3}
+  - {fileID: 511386706532364640, guid: f657ab971ca884345934f23d1d80742b, type: 3}
   fishingRodTests: {fileID: 699122186}
 --- !u!4 &442360608
 Transform:
@@ -6650,6 +6690,14 @@ Transform:
   - {fileID: 932629352}
   m_Father: {fileID: 2712412074706383357}
   m_LocalEulerAnglesHint: {x: -66.847, y: 65.151, z: -66.379}
+--- !u!33 &5570128872578033283
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8190105484281672604}
+  m_Mesh: {fileID: -4472318479014892920, guid: 6570ef01a3c053145b42ffb7e45c825d, type: 3}
 --- !u!114 &5662493124697804739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6697,6 +6745,7 @@ Transform:
   - {fileID: 1995534428}
   - {fileID: 1838806121}
   - {fileID: 1102454120}
+  - {fileID: 8854860990549207334}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6093319267228859539
@@ -7562,6 +7611,49 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!23 &7685927106512540233
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8190105484281672604}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 257
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 6944478244744183378, guid: 6570ef01a3c053145b42ffb7e45c825d, type: 3}
+  - {fileID: -7767390930315640473, guid: 6570ef01a3c053145b42ffb7e45c825d, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &7694753344309122495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7650,6 +7742,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_System: {fileID: 3994219934490005728}
   m_DelayTime: 0
+--- !u!1 &8190105484281672604
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8854860990549207334}
+  - component: {fileID: 5570128872578033283}
+  - component: {fileID: 7685927106512540233}
+  - component: {fileID: 8854860990549207335}
+  m_Layer: 0
+  m_Name: zip22
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!23 &8316783876360423513
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7868,6 +7979,48 @@ MonoBehaviour:
   m_EnableARRaycasting: 0
   m_OccludeARHitsWith3DObjects: 0
   m_OccludeARHitsWith2DObjects: 0
+--- !u!4 &8854860990549207334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8190105484281672604}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.57150245, y: 0.40648478, z: -0.41639504, w: -0.57859325}
+  m_LocalPosition: {x: -0.00084, y: -0.0133, z: -0.06134}
+  m_LocalScale: {x: 0.04366887, y: 0.04366887, z: 0.043668922}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5983287090944818771}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &8854860990549207335
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8190105484281672604}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &8974408599360358038
 MonoBehaviour:
   m_ObjectHideFlags: 0

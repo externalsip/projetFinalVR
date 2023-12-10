@@ -111,7 +111,7 @@ public class timingGamePrototype : MonoBehaviour
             Debug.Log("Big Win");
                 timingGameObject.SetActive(false);
                 timingGameObject.GetComponent<Animator>().Play("Base Layer.Idle", 0, 0);
-                int fishNumber = Random.Range(50, 100);
+                int fishNumber = Random.Range(1, 100);
                  if(fishNumber >= 1 && fishNumber < 50)
                  {
                      fishArray.PickCommonFish();
