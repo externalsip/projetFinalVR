@@ -109,6 +109,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: zip22
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6570ef01a3c053145b42ffb7e45c825d,
+        type: 3}
+      propertyPath: m_TagString
+      value: fish
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
