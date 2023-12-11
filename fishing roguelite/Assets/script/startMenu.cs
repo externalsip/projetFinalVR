@@ -5,7 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class startMenu : MonoBehaviour
 {
-    public bool gameStarted = false;
+
+    public GameObject mainMenu;
+    public GameObject helpMenu1;
+    public GameObject helpMenu2;
+
+    public GameObject helpTitle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,4 +33,6 @@ public class startMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+
 }
