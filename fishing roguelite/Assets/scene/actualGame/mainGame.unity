@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2169.0178, g: 2370.2659, b: 3720.641, a: 1}
+  m_IndirectSpecularColor: {r: 2025.513, g: 2069.846, b: 2670.3323, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1008,7 +1008,7 @@ MonoBehaviour:
   click: {fileID: 8300000, guid: c8ff8a0dd42aef44ab9707e9a513c517, type: 3}
   fishSound: {fileID: 8300000, guid: 73b03cc866668fd4997513002611efd5, type: 3}
   whipSound: {fileID: 8300000, guid: 74409f152024b3743b29411fc38d8a68, type: 3}
-  forceMultiplier: -2
+  forceMultiplier: -1
 --- !u!54 &699122187
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2443,7 +2443,7 @@ Rigidbody:
   m_GameObject: {fileID: 919132149185953168}
   serializedVersion: 4
   m_Mass: 0.01
-  m_Drag: 0.05
+  m_Drag: 3
   m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
